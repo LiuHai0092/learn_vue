@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            margin: 10px;
+            border: 3px solid #000;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!--v-if v-else-if v-else 条件匹配-->
+        <p v-if="gener === 1">性别：♂ 男</p>
+        <p v-else>性别：♀ 女</p>
+        <hr>
+        <p v-if="score >=90">优秀</p>
+        <p v-else-if="score >=80">良</p>
+        <p v-else-if="score >=70">中</p>
+        <p v-else>差</p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.min.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                gener: 1,
+                score: 84
+            }
+        })
+    </script>
+
+
+
+
+
+</body>
+
+
+
+</html>
