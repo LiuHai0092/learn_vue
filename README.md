@@ -74,10 +74,10 @@ day02
 
 4.v-bind对于样式控制的增加 - 操作class
 4.1 语法：   :class="对象/数组"
-    ① 对象 -> 键就是类名，值是布尔值。如果值为true，有这个类，否则没有这个类 
-    <div class="box" :class="{pink:true,big:true}">黑马程序员</div>
+    ① 对象 -> 键就是类名，值是布尔值。如果值为true，有这个类，否则没有这个类
+    <div class="box" :class="{pink:true,big:true}">程序员</div>
     ② 数组 -> 数组中的所有的类，都会添加到盒子上，本质就是一个class列表
-    <div class="box" :class="['pink','big']">黑马程序员</div>
+    <div class="box" :class="['pink','big']">程序员</div>
 
 5.v-bind对于样式控制的增强 - 操作style
 5.1 语法： :style="样式对象"
