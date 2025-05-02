@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 该案例运用到的指令 
+     v-show  控制元素显示隐藏 
+     v-on    注册事件 相当于添加监听和提供处理逻辑  v-on:click = :click
+     v-bind 动态的设置html的标签属性  v-bind:src = :src
+     -->
+    <div id="app">
+        <button v-show="index > 0" @click="index--">上一页</button>
+        <div>
+            <img :src="list[index]" atl="">
+        </div>
+        <button v-show="index < list.length-1" @click="index++">下一页</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.min.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                index: 0,
+                list: [
+                    './imgs/11-00.gif',
+                    './imgs/11-01.gif',
+                    './imgs/11-02.gif',
+                    './imgs/11-03.gif',
+                    './imgs/11-04.png',
+                    './imgs/11-05.png'
+                ]
+            },
+            methods: {
+
+            },
+        })
+    </script>
+
+
+
+
+
+</body>
+
+
+
+</html>

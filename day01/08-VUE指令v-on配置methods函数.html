@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--v-on 注册事件 相当于添加监听和提供处理逻辑
+    如果事件名为click,可以简写成 v-on:click=@click,至于其他事件名，是否可以简写，需要测试
+    -->
+    <div id="app">
+        <button @click="fn">切换显示隐藏</button>
+        <h1 v-show="isShow">程序员</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.min.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                isShow: false
+            },
+            methods: {
+                fn() {
+                    // 让提供的所有methods中的函数，this都指向当前实例
+                    // console.log('执行了fn', app.isShow)
+                    // console.log(app3 === this)
+                    this.isShow = !this.isShow
+                }
+            },
+        })
+    </script>
+
+
+
+
+
+</body>
+
+
+
+</html>
