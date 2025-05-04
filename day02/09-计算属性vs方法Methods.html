@@ -32,9 +32,13 @@
   </style>
 </head>
 <body>
-
+  <!-- 使用methods方法进行求和时，会加载多次；使用计算属性computed求和时，只会加载一次 -->
   <div id="app">
-    <h3>小黑的礼物清单🛒<span>?</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{ totalCountFn() }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{ totalCountFn() }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{ totalCountFn() }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{ totalCountFn() }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{ totalCountFn() }}</span></h3>
     <table>
       <tr>
         <th>名字</th>
@@ -46,6 +50,10 @@
       </tr>
     </table>
 
+    <p>礼物总数：{{ totalCount }} 个</p>
+    <p>礼物总数：{{ totalCount }} 个</p>
+    <p>礼物总数：{{ totalCount }} 个</p>
+    <p>礼物总数：{{ totalCount }} 个</p>
     <p>礼物总数：{{ totalCount }} 个</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -62,10 +70,18 @@
       },
       computed: {
         totalCount () {
+          console.log('计算属性执行了')
           let total = this.list.reduce((sum, item) => sum + item.num, 0)
           return total
         }
-      }
+      },
+      methods: {
+        totalCountFn(){
+          console.log('methods方法执行了')
+          let total = this.list.reduce((sum, item) => sum + item.num, 0)
+          return total
+        }
+      },
     })
   </script>
 </body>

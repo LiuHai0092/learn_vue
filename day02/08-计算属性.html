@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,14 +12,18 @@
       text-align: center;
       width: 240px;
     }
-    th,td {
+
+    th,
+    td {
       border: 1px solid #000;
     }
+
     h3 {
       position: relative;
     }
   </style>
 </head>
+
 <body>
 
   <div id="app">
@@ -35,7 +40,7 @@
     </table>
 
     <!-- 目标：统计求和，求得礼物总数 -->
-    <p>礼物总数：? 个</p>
+    <p>礼物总数：{{ totalCount }} 个</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script>
@@ -44,12 +49,25 @@
       data: {
         // 现有的数据
         list: [
-          { id: 1, name: '篮球', num: 1 },
+          { id: 1, name: '篮球', num: 10 },
           { id: 2, name: '玩具', num: 2 },
           { id: 3, name: '铅笔', num: 5 },
         ]
+      },
+      computed: {
+        totalCount() {
+          // 基于现有的数据，编写求值逻辑
+          // 计算属性函数内部，可以直接通过 this 访问到 app 实例
+          // console.log(this.list)
+
+          // 需求：对 this.list 数组里面的 num 进行求和 → reduce
+          let total = this.list.reduce((sum, item) => sum + item.num, 0)
+          return total
+        }
       }
+
     })
   </script>
 </body>
+
 </html>
