@@ -28,10 +28,27 @@ VUE-DEMO
 1.3 项目运行流程
 yarn serve 或 npm run serve  ——> 加载 main.js -> 导入 App.vue -> 渲染 index.html
 vscode中运行 npm install npm run serve
-1.3.1 main.js 核心代码
-① 导入vue   import Vue from 'vue'
-② 导入App.vue  import App from './App.vue'
-③ 实例化 Vue，将 App.vue 渲染到 index.html 容器中 
+1.3.1 初始脚手架项目 main.js 核心代码
+① 导入 Vue 核心包   import Vue from 'vue'
+② 导入 App.vue 根组件  import App from './App.vue'
+③ Vue实例化，提供render方法 -> 基于App.vue 创建结构渲染index.html
 new Vue({
-render: h => h(App),
+  render: h => h(App),
+  //完整写法
+  //render:(createElement)=>{
+  //基于App创建元素结构
+  // return createElement(App)
+  //  }
 }).$mount('#app')
+
+1.4 注册局部组件
+① 引入组件 import HmMain from './components/HmMain.vue'
+② 注册组件 components: {
+    // '组件名': 组件对象
+    HmMain: HmMain,
+    //简写
+    HmMain,
+  }
+
+1.5 注册全局组件
+main.js 中 语法：Vue.component(组件名，组件对象)

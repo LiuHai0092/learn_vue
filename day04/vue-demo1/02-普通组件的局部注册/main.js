@@ -11,9 +11,9 @@ Vue.config.productionTip = false
 //3. Vue实例化，提供render方法 -> 基于App.vue 创建结构渲染index.html
 new Vue({
   render: h => h(App),
-  //完整写法
-  //render:(createElement)=>{
-  //基于App创建元素结构
+  // 完整写法
+  // render:(createElement)=>{
+  // 基于App创建元素结构
   // return createElement(App)
   //  }
 }).$mount('#app')
