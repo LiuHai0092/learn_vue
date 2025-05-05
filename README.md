@@ -131,4 +131,17 @@ day02
         }        
     }
 
-day05
+day03
+1.生命周期
+1.1 定义：一个VUE实例从创建到销毁的整个过程
+1.2 阶段：① 创建 ② 挂载 ③ 更新 ④ 销毁
+
+2.生命周期函数（钩子函数）
+2.1 定义：VUE生命周期过程中，会自动运行一些函数，被称为【生命周期钩子】，可以让开发者可以在特定时段运行自己的代码
+2.2 阶段与钩子函数的对应关系
+    ① 创建阶段 对应的钩子函数 beforeCreate created
+    ② 挂载阶段 对应的钩子函数 beforeMount  mounted
+    ③ 更新阶段 对应的钩子函数 beforeUpdate updated
+    ④ 销毁阶段 对应的钩子函数 beforeDestory destoryed
+2.3 常用的钩子  created  mounted beforeDestory
+
