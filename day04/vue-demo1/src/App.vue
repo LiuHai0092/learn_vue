@@ -1,11 +1,19 @@
 <template>
   <div class="App">
-    <!-- 头部组件 -->
-    <HmHeader></HmHeader>
-    <!-- 主体组件 -->
-    <HmMain></HmMain>
-    <!-- 底部组件 -->
-    <HmFooter></HmFooter>
+    <!-- 快捷链接 -->
+    <XtxShortCut></XtxShortCut>
+    <!-- 头部导航 -->
+    <XtxHeaderNav></XtxHeaderNav>
+    <!-- 轮播区域 -->
+    <XtxBanner></XtxBanner>
+    <!-- 新鲜好物 -->
+    <XtxNewGoods></XtxNewGoods>
+    <!-- 热门品牌 -->
+    <XtxHotBrand></XtxHotBrand>
+    <!-- 最新专题 -->
+    <XtxTopic></XtxTopic>
+    <!-- 版权底部 -->
+    <XtxFooter></XtxFooter>
 
     <!-- 如果 HmFooter + tab 出不来 → 需要配置 vscode
      设置中搜索 trigger on tab → 勾上
@@ -16,27 +24,26 @@
 
 <script>
 //1.引入组件
-import HmMain from './components/HmMain.vue'
-import HmHeader from './components/HmHeader.vue'
-import HmFooter from './components/HmFooter.vue'
+import XtxHeaderNav from './components/XtxHeaderNav.vue';
+import XtxBanner from './components/XtxBanner.vue';
+import XtxNewGoods from './components/XtxNewGoods.vue';
+import XtxHotBrand from './components/XtxHotBrand.vue';
+import XtxTopic from './components/XtxTopic.vue';
+
+
 export default {
   //2.注册组件
   components: {
-    // '组件名': 组件对象
-    HmMain: HmMain,
-    //简写
-    HmHeader,
-    HmFooter
+    XtxHeaderNav,
+    XtxBanner,
+    XtxNewGoods,
+    XtxHotBrand,
+    XtxTopic,
+
   }
 }
 </script>
 
 <style lang="less">
-.App {
-  width: 600px;
-  height: 700px;
-  background-color: #87ceeb;
-  margin: 0 auto;
-  padding: 20px;
-}
+
 </style>
